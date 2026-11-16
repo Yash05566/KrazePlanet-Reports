@@ -34,11 +34,13 @@ A Reflected Cross-Site Scripting (XSS) vulnerability was identified in the Add T
 
 ### Screenshot 1 – Payload Entered in Add Terms Field
 
-<!-- Upload Screenshot 1 Here -->
+<img width="940" height="491" alt="image" src="https://github.com/user-attachments/assets/fb496fb0-5bc5-4730-be12-3fbd155a9b2f" />
+
 
 ### Screenshot 2 – JavaScript Alert Popup
 
-<!-- Upload Screenshot 2 Here -->
+<img width="940" height="492" alt="image" src="https://github.com/user-attachments/assets/94036b79-a36d-45f4-b396-9091ac43f1c1" />
+
 
 ### HTTP Request / URL
 
