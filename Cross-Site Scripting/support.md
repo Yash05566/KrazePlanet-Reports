@@ -1,0 +1,65 @@
+## Title
+
+Reflected XSS in First Name and Last Name Form Fields
+
+## Description
+
+**Affected URL:** https://support.pwnedbox.site/
+
+**Vulnerability Type:** Reflected Cross-Site Scripting (XSS)
+
+**Parameters:** `fname`, `lname`
+
+The application accepts First Name and Last Name values through GET parameters. The lab description reports that the values are reflected into HTML input elements without proper context-aware output encoding.
+
+## Steps to Reproduce
+
+1. Visit https://support.pwnedbox.site/.
+2. Enter the following test payload in both First Name and Last Name fields:
+
+   ```html
+   '"<><body onpageshow=alert(1)>
+   ```
+
+3. Submit the form.
+4. Check whether a JavaScript alert displaying `1` appears.
+5. Inspect the page source or DOM to verify reflection in both parameters.
+
+## Proof of Concept (POC)
+
+### Screenshot 1 – Payload Entered in Both Fields
+
+<!-- Add the GitHub screenshot URL here. -->
+
+### Screenshot 2 – JavaScript Alert Execution
+
+<!-- Add the alert screenshot URL here, if observed. -->
+
+### Screenshot 3 – Reflected HTML in Both Parameters
+
+<!-- Add the page-source or Inspector screenshot URL here. -->
+
+### HTTP Request / URL
+
+```http
+https://support.pwnedbox.site/?fname=%27%22%3C%3E%3Cbody%20onpageshow%3Dalert%281%29%3E&lname=%27%22%3C%3E%3Cbody%20onpageshow%3Dalert%281%29%3E
+```
+
+### Payload
+
+```html
+'"<><body onpageshow=alert(1)>
+```
+
+## Impact
+
+- **JavaScript Execution:** A crafted URL may execute JavaScript in a visitor's browser.
+- **Page Manipulation:** Injected script may modify displayed content or create deceptive elements.
+- **Targeted Attacks:** A crafted link may be distributed to users to trigger the issue.
+
+## Remediation
+
+1. **Context-Aware Output Encoding:** Encode user-controlled values for the HTML attribute context before inserting them into input elements.
+2. **Parameter Handling:** Apply consistent secure handling to both `fname` and `lname`.
+3. **Safe Output Practices:** Avoid inserting raw user input into HTML.
+4. **Content Security Policy:** Use a restrictive CSP as an additional layer of protection.
