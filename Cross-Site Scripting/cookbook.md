@@ -35,15 +35,15 @@ The page accepts First Name and Last Name values through GET parameters. During 
 
 ### Screenshot 1 – Payloads Entered in the Form
 
-<!-- Add Screenshot 1 Here -->
+<img width="940" height="494" alt="image" src="https://github.com/user-attachments/assets/397588a9-0739-4a0c-81be-c1c5943e7b5d" />
 
 ### Screenshot 2 – First Alert Popup
 
-<!-- Add Screenshot 2 Here -->
+<img width="940" height="354" alt="image" src="https://github.com/user-attachments/assets/11767b2b-af93-4657-a07b-f5ac2c4bfb28" />
 
 ### Screenshot 3 – Second Alert Popup
 
-<!-- Add Screenshot 3 Here -->
+<img width="940" height="356" alt="image" src="https://github.com/user-attachments/assets/17904c72-c663-43cb-8e59-8f0a67423340" />
 
 ### Payloads Used
 
