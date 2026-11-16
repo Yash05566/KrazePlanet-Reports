@@ -34,11 +34,13 @@ A Reflected Cross-Site Scripting (XSS) vulnerability was found in the search fun
 
 ### Screenshot 1 – Payload Entered in Search Box
 
-<!-- Upload Screenshot 1 Here -->
+<img width="940" height="492" alt="image" src="https://github.com/user-attachments/assets/9af6ea7f-dfca-4e1d-8b06-6763272b46fd" />
+
 
 ### Screenshot 2 – JavaScript Alert Popup
 
-<!-- Upload Screenshot 2 Here -->
+<img width="940" height="496" alt="image" src="https://github.com/user-attachments/assets/aa8e7679-0bc4-4ef2-83fb-33356c3d3fe5" />
+
 
 ### HTTP Request
 
@@ -65,11 +67,6 @@ Depending on the application's functionality, this vulnerability could allow an 
 
 **Affected Users:** Users who open a specially crafted URL containing the malicious search parameter.
 
-### References
-
-1. [PortSwigger – Cross-Site Scripting](https://portswigger.net/web-security/cross-site-scripting)
-2. [PortSwigger – Exploiting Cross-Site Scripting](https://portswigger.net/web-security/cross-site-scripting/exploiting)
-3. [OWASP – XSS Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
 
 ## Remediation
 
@@ -78,7 +75,3 @@ Depending on the application's functionality, this vulnerability could allow an 
 - Avoid unsafe DOM manipulation methods such as `innerHTML`.
 - Implement a restrictive Content Security Policy (CSP) as an additional security layer.
 
-## References
-
-- https://owasp.org/www-community/attacks/xss/
-- https://portswigger.net/web-security/cross-site-scripting
