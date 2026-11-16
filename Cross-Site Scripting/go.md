@@ -13,7 +13,7 @@ Reflected XSS Through the `returnTo` Parameter
 During parameter discovery, `x8scan` identified the `returnTo` GET parameter and produced the test URL:
 
 ```text
-https://go.pwnedbox.site/?returnTo=x8scan1
+https://go.pwnedbox.site/?returnTo=
 ```
 
 The parameter is associated with the destination used by the **Cancel & return** link on the account confirmation page. The supplied test value is included in the URL below. Verify that the value is reflected into the link's `href` attribute and that the browser executes the test JavaScript before marking the issue as confirmed.
@@ -47,19 +47,19 @@ The parameter is associated with the destination used by the **Cancel & return**
 
 ### Screenshot 1 – Parameter Discovery Using x8scan
 
-<!-- Add the x8scan output screenshot here. -->
+<img width="959" height="505" alt="image" src="https://github.com/user-attachments/assets/eefdf22c-1622-4e17-84db-79feb0a8ecd2" />
 
 ### Screenshot 2 – Crafted returnTo Payload in the URL
 
-<!-- Add the screenshot showing the account confirmation page and crafted URL here. -->
+<img width="959" height="504" alt="image" src="https://github.com/user-attachments/assets/43a8a270-ba93-4b69-961d-1566047648f2" />
 
 ### Screenshot 3 – JavaScript Execution
 
-<!-- Add a screenshot of the confirmation dialog only if it appears during testing. -->
+<img width="959" height="335" alt="image" src="https://github.com/user-attachments/assets/5f960be2-516b-4df9-899c-8aa13cf3338e" />
 
 ### Screenshot 4 – Reflected Value in the Cancel & return Link
 
-<!-- Add page-source or Inspector evidence showing the href attribute. -->
+<img width="959" height="499" alt="image" src="https://github.com/user-attachments/assets/3e680f3c-9041-434b-ac12-a5587c90e706" />
 
 ### Payload
 
