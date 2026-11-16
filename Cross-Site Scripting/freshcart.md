@@ -30,11 +30,13 @@ The search feature does not safely handle the value supplied by the user. During
 
 ### Screenshot 1 – Search Field Containing the Payload
 
-<!-- Add Screenshot 1 Here -->
+<img width="940" height="496" alt="image" src="https://github.com/user-attachments/assets/a6dc65c5-4079-4b51-9711-60b45016dd8a" />
+
 
 ### Screenshot 2 – Alert Generated After Submission
 
-<!-- Add Screenshot 2 Here -->
+<img width="940" height="492" alt="image" src="https://github.com/user-attachments/assets/287882e3-8989-4b6a-9101-edb3916ae303" />
+
 
 ### Payload Used
 
