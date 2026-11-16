@@ -32,17 +32,20 @@ The page accepts First Name and Last Name values through GET parameters. Testing
 
 ## POC (Proof of Concept)
 
-### Screenshot 1 – JavaScript Alert
+### Screenshot 1 – Form Fields with Test Payloads
 
-<!-- Add Screenshot 1 Here -->
+<img width="940" height="493" alt="image" src="https://github.com/user-attachments/assets/28ed7d14-ec94-4400-9e14-345d6557b0f4" />
 
-### Screenshot 2 – Form Fields with Test Payloads
 
-<!-- Add Screenshot 2 Here -->
+### Screenshot 2 – JavaScript Alert
+
+<img width="940" height="217" alt="image" src="https://github.com/user-attachments/assets/9ff27834-5775-489c-aac5-0edb21175f3e" />
+
 
 ### Screenshot 3 – Second JavaScript Alert
 
-<!-- Add Screenshot 3 Here -->
+<img width="940" height="258" alt="image" src="https://github.com/user-attachments/assets/c51f5aba-b4f9-477d-ba05-134313e87e31" />
+
 
 ### Payloads Used
 
