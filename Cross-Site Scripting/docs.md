@@ -24,11 +24,11 @@ The page accepts a value through the `q` GET parameter. During testing, a crafte
 
 ### Screenshot 1 – Payload in the `q` Parameter
 
-<!-- Add Screenshot 1 Here -->
+<img width="940" height="493" alt="image" src="https://github.com/user-attachments/assets/dd8e1090-2807-42a3-b33c-7835327b6ae3" />
 
 ### Screenshot 2 – JavaScript Execution
 
-<!-- Add Screenshot 2 Here -->
+<img width="940" height="490" alt="image" src="https://github.com/user-attachments/assets/73def5fb-3fed-4cab-84f3-4055d78c5973" />
 
 ### Payload Used
 
