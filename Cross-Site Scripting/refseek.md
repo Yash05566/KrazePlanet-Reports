@@ -34,11 +34,13 @@ A Reflected Cross-Site Scripting (XSS) vulnerability was found in the search fun
 
 ### Screenshot 1 – Payload Entered in Search Box
 
-<!-- Upload Screenshot 1 Here -->
+<img width="940" height="495" alt="image" src="https://github.com/user-attachments/assets/289b828c-3c8c-4841-9a61-f9fd34bf3c05" />
+
 
 ### Screenshot 2 – JavaScript Alert Popup
 
-<!-- Upload Screenshot 2 Here -->
+<img width="940" height="495" alt="image" src="https://github.com/user-attachments/assets/fc06df4f-cd93-4a94-bd45-324267aee598" />
+
 
 ### HTTP Request / URL
 
