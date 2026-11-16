@@ -34,20 +34,22 @@ The test checks whether the supplied values are reflected into the HTML input el
 
 ### Screenshot 1 – Payload Submitted in Both Name Fields
 
-<!-- Add your screenshot showing the payload in both fields here. -->
+<img width="959" height="499" alt="image" src="https://github.com/user-attachments/assets/9a9de0da-5faf-414e-8be4-41e4cf12ab44" />
 
 ### Screenshot 2 – JavaScript Alert Execution
+<img width="959" height="308" alt="image" src="https://github.com/user-attachments/assets/5ad5158d-1d86-4dd8-9120-1d47cee87ebd" />
+<img width="959" height="476" alt="image" src="https://github.com/user-attachments/assets/c2bd2c46-8ab4-4e4b-a566-299f40a486d9" />
 
-<!-- Add your screenshot showing the alert displaying 1 here, if observed. -->
 
 ### Screenshot 3 – Reflected Payload in HTML
 
-<!-- Add your page-source or Inspector screenshot showing reflection in fname and lname here. -->
+<img width="959" height="502" alt="image" src="https://github.com/user-attachments/assets/7caa055c-543b-429f-80a6-74c117cb848b" />
+
 
 ### HTTP Request / URL
 
 ```http
-https://directory.pwnedbox.site/?fname=Yash%27%22%3C%3E%3CSCripT%3Ealert%281%29%3C%2FSCripT%3E&lname=Yash%27%22%3C%3E%3CSCripT%3Ealert%281%29%3C%2FSCripT%3E
+view-source:https://directory.pwnedbox.site/?fname=+Yash%27%22%3C%3E%3CSCripT%3Ealert%281%29%3C%2FSCripT%3E&lname=+Yash%27%22%3C%3E%3CSCripT%3Ealert%281%29%3C%2FSCripT%3E
 ```
 
 ### Payload
