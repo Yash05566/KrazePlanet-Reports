@@ -29,15 +29,15 @@ The application accepts First Name and Last Name values through GET parameters. 
 
 ### Screenshot 1 – Payload Entered in Both Fields
 
-<!-- Add the GitHub screenshot URL here. -->
+<img width="959" height="502" alt="image" src="https://github.com/user-attachments/assets/31cc1783-ab16-4333-9f0c-ed970f760ee9" />
 
 ### Screenshot 2 – JavaScript Alert Execution
 
-<!-- Add the alert screenshot URL here, if observed. -->
+<img width="959" height="500" alt="image" src="https://github.com/user-attachments/assets/b80be4d9-89c7-47bc-93a8-3819c71e7d16" />
 
 ### Screenshot 3 – Reflected HTML in Both Parameters
 
-<!-- Add the page-source or Inspector screenshot URL here. -->
+<img width="959" height="504" alt="image" src="https://github.com/user-attachments/assets/3cf0dd85-f218-4607-bbbf-952ecd252e72" />
 
 ### HTTP Request / URL
 
