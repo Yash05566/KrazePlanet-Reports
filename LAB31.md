@@ -1,4 +1,4 @@
-# Reflected XSS – TutorialRepublic
+# Reflected XSS
 
 ## Description
 
@@ -27,11 +27,13 @@ The search parameter `q` accepts user input that is reflected in the page respon
 
 ### Screenshot 1 – Payload Entered in Search Box
 
-<!-- Upload the screenshot showing the payload in the search box here -->
+<img width="940" height="494" alt="image" src="https://github.com/user-attachments/assets/fcba3e91-72f4-43ab-8571-12265b3f8bd2" />
+
 
 ### Screenshot 2 – Alert Popup After Submission
 
-<!-- Upload the screenshot showing the alert popup here -->
+<img width="940" height="497" alt="image" src="https://github.com/user-attachments/assets/3103fe66-21b0-49e3-8028-736970a7d093" />
+
 
 ### Payload
 
@@ -64,9 +66,3 @@ Depending on the affected page and the victim's session, this could be used to:
 - Validate and sanitize input where required.
 - Avoid inserting untrusted input into HTML using unsafe methods such as `innerHTML`.
 - Apply a suitable Content Security Policy (CSP) as an additional security measure.
-
-## References
-
-- https://owasp.org/www-community/attacks/xss/
-- https://portswigger.net/web-security/cross-site-scripting
-- https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html
