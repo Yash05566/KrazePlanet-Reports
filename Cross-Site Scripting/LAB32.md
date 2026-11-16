@@ -10,8 +10,6 @@ Reflected XSS - GIGW: Government Website Guidelines Portal
 
 **Parameter:** `s`
 
-**Severity:** [To be assessed]
-
 **Description:**
 
 A Reflected Cross-Site Scripting (XSS) vulnerability was found in the search functionality of the website. The application accepts input through the `s` parameter and allows the supplied JavaScript to execute in the browser.
