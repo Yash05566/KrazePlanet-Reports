@@ -35,15 +35,18 @@ The GET Parameter Reflection page accepts values in the First Name and Last Name
 
 ### Screenshot 1 – Payloads Entered in Both Fields
 
-<!-- Add Screenshot 1 Here -->
+<img width="940" height="493" alt="image" src="https://github.com/user-attachments/assets/c674c698-77b9-4177-a7eb-42f645d80321" />
+
 
 ### Screenshot 2 – First JavaScript Alert
 
-<!-- Add Screenshot 2 Here -->
+<img width="940" height="217" alt="image" src="https://github.com/user-attachments/assets/2b64b699-4367-439b-bee2-681ee2fe4443" />
+
 
 ### Screenshot 3 – Second JavaScript Alert
 
-<!-- Add Screenshot 3 Here -->
+<img width="940" height="258" alt="image" src="https://github.com/user-attachments/assets/4c454ddf-5bfc-4e37-bc2b-98676f0ccb4a" />
+
 
 ### Payloads Used
 
