@@ -1,0 +1,68 @@
+## Title
+
+Reflected XSS in PUBG Community Filter
+
+## Description
+
+**Affected URL:** https://assets.pwnedbox.site/
+
+**Vulnerability Type:** Reflected Cross-Site Scripting (XSS)
+
+**Affected Parameter:** `p`
+
+The PUBG Community page uses the `p` GET parameter for its filter value. During testing, the supplied input was reflected in the page's `data-query` attribute without suitable HTML attribute encoding. A crafted value was able to break out of the attribute context and execute JavaScript in the browser.
+
+## Steps to Reproduce
+
+1. Open https://assets.pwnedbox.site/.
+2. Locate the **Filter** field on the Community page.
+3. Enter the following test value:
+
+   ```html
+   Yash'"><ScRipT>confirm("XSS");</ScRipT>
+   ```
+
+4. Click **Search**.
+5. Observe the confirmation dialog displaying `XSS`.
+
+## POC (Proof of Concept)
+
+### Screenshot 1 – Payload Entered in the Community Filter
+
+<!-- Add Screenshot 1 Here -->
+
+### Screenshot 2 – JavaScript Confirmation Dialog
+
+<!-- Add Screenshot 2 Here -->
+
+### Payload Used
+
+```html
+Yash'"><ScRipT>confirm("XSS");</ScRipT>
+```
+
+### HTTP Request / URL
+
+```http
+https://assets.pwnedbox.site/?p=Yash%27%22%3CScRipT%3Econfirm%28%22XSS%22%29%3B%3C%2FScRipT%3E
+```
+
+## Impact
+
+A crafted link containing the affected `p` parameter may execute JavaScript when a visitor opens it. Depending on the application's features and the visitor's session, this could potentially allow an attacker to:
+
+- Change or inject content displayed on the page.
+- Show misleading messages or fake interface elements.
+- Redirect visitors to an unwanted website.
+- Attempt actions available to the visitor's active session.
+
+**Actual Impact:** The test payload executed successfully and displayed a JavaScript confirmation dialog containing `XSS`. No account compromise or data theft was demonstrated.
+
+**Potentially Affected Users:** Visitors who open a crafted URL containing the vulnerable `p` parameter.
+
+## Remediation
+
+- Apply context-aware HTML attribute encoding to the `p` parameter before placing it in the `data-query` attribute.
+- Treat all query-string values as untrusted input.
+- Avoid inserting raw user-controlled values into HTML attributes or page content.
+- Use safe DOM APIs and implement a restrictive Content Security Policy (CSP) as an additional layer of protection.
