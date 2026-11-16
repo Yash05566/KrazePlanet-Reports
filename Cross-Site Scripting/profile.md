@@ -29,11 +29,11 @@ The page accepts a value through the Last Name field and sends it using the `lna
 
 ### Screenshot 1 – Payload Entered in the Last Name Field
 
-<!-- Add Screenshot 1 Here -->
+<img width="940" height="493" alt="image" src="https://github.com/user-attachments/assets/b3be54f3-7c82-41f1-a061-b8aed70adda4" />
 
 ### Screenshot 2 – JavaScript Alert Executed
 
-<!-- Add Screenshot 2 Here -->
+<img width="940" height="486" alt="image" src="https://github.com/user-attachments/assets/c3c25052-a9d3-4a99-be71-9882134692a5" />
 
 ### Payload Used
 
