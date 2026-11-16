@@ -19,7 +19,7 @@ The PUBG Community page uses the `p` GET parameter for its filter value. During 
 3. Enter the following test value:
 
    ```html
-   Yash'"><ScRipT>confirm("XSS");</ScRipT>
+   Yash'"><SCripT>confirm("XSS");</SCripT>
    ```
 
 4. Click **Search**.
@@ -29,16 +29,16 @@ The PUBG Community page uses the `p` GET parameter for its filter value. During 
 
 ### Screenshot 1 – Payload Entered in the Community Filter
 
-<!-- Add Screenshot 1 Here -->
+<img width="959" height="505" alt="image" src="https://github.com/user-attachments/assets/96919fd5-4e23-4129-8d77-0bc6fc7d5136" />
 
 ### Screenshot 2 – JavaScript Confirmation Dialog
 
-<!-- Add Screenshot 2 Here -->
+<img width="959" height="397" alt="image" src="https://github.com/user-attachments/assets/57f8abfe-40f3-4470-b901-214958f8b8e2" />
 
 ### Payload Used
 
 ```html
-Yash'"><ScRipT>confirm("XSS");</ScRipT>
+Yash'"><SCripT>confirm("XSS");</SCripT>
 ```
 
 ### HTTP Request / URL
