@@ -45,38 +45,11 @@ The page accepts First Name and Last Name values through GET parameters. During 
 
 <img width="940" height="356" alt="image" src="https://github.com/user-attachments/assets/17904c72-c663-43cb-8e59-8f0a67423340" />
 
-### Payloads Used
-
-**First Name (`fname`):**
-
-```html
-"><svg onload=alert(1)>
-```
-
-**Last Name (`lname`):**
-
-```html
-"><svg onload=alert(2)>
-```
-
-### HTTP Request / URL
-
-```http
-https://cookbook.pwnedbox.site/?fname=%22%3E%3Csvg+onload%3Dalert%281%29%3E&lname=%22%3E%3Csvg+onload%3Dalert%282%29%3E
-```
-
 ## Impact
 
-A crafted link containing these parameter values could trigger JavaScript when another visitor opens it. Depending on the site's functionality and the visitor's session, this type of issue may be used to:
-
 - Change or insert misleading content into the page.
-- Redirect a visitor to an external website.
-- Display a fake form to collect information.
+- Trigger unauthorized scripts in a visitor's browser.
 - Attempt actions available to the visitor's active session.
-
-**Actual Impact:** Both SVG event-handler payloads executed successfully. The browser displayed separate alert popups containing `1` and `2`. No account compromise or data access was demonstrated.
-
-**Potentially Affected Users:** Visitors who open a crafted URL containing the affected `fname` and `lname` parameters.
 
 ## Remediation
 
