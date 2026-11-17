@@ -1,4 +1,5 @@
-# Reflected XSS via Username GET Parameter – Imgur Mobile
+## Title 
+Reflected XSS via Username GET Parameter
 
 ## Description
 
@@ -24,12 +25,6 @@ The application accepts a username through the `username` GET parameter. The sup
 5. Locate where the `username` value is reflected, including the profile link's `href` attribute.
 6. Verify whether the reflected value is properly encoded for that HTML context.
 
-## Proof of Concept (POC)
-
-### Screenshot 1 – Crafted URL Containing the Username Payload
-
-![Crafted URL with the username parameter](images/media-crafted-url.png)
-
 **Test Parameter:** `username`
 
 **Payload represented in the URL:**
@@ -38,7 +33,23 @@ The application accepts a username through the `username` GET parameter. The sup
 Yash'"><script>alert(1)</script>
 ```
 
-**Evidence note:** The supplied screenshot shows the crafted URL and payload in the browser address bar. It does not, by itself, demonstrate the alert execution or unsafe reflection in the page source. Add screenshots of the alert and the relevant HTML/source reflection after confirming those results.
+
+## Proof of Concept (POC)
+
+### Screenshot 1 – x8scan output showing the transformed URL and username parameter.
+
+<img width="959" height="254" alt="image" src="https://github.com/user-attachments/assets/bda55b9d-5ee5-4196-850f-ecfaa69beab9" />
+
+
+### Screenshot 2 – page displaying the reflected username.
+
+<img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/1cedbf7f-c059-433d-8d4b-2a3074287e91" />
+
+
+### Screenshot 3 – JavaScript alert displaying 1, confirming successful execution.
+
+<img width="959" height="266" alt="image" src="https://github.com/user-attachments/assets/c360be35-d41d-4333-a038-f901848c9f52" />
+
 
 ## Impact
 
