@@ -1,4 +1,5 @@
-# Reflected XSS – Encoding Bypass Attempts
+## Title
+Reflected XSS – Encoding Bypass Attempts
 
 ## Description
 
@@ -17,7 +18,7 @@ The application reflects user-supplied data from the `cat` GET parameter in its 
 3. Open the following crafted URL in a browser:
 
    ```text
-   https://mail.pwnedbox.site/?cat=Priyanshxop%27%22%3C%3E%3CScRipT%3Ea\u006cert(1)%3C/ScRipT%3E
+   https://mail.pwnedbox.site/?cat=Yash%27%22%3C%3E%3CScRipT%3Ea\u006cert(1)%3C/ScRipT%3E
    ```
 
 4. Allow the page to load with the crafted value supplied through the `cat` parameter.
@@ -25,33 +26,33 @@ The application reflects user-supplied data from the `cat` GET parameter in its 
 6. Dismiss the alert dialog.
 7. Inspect the page source or HTML response and locate the reflected `cat` value.
 
-## Proof of Concept (POC)
-
-### Screenshot 1 – GET Parameter Discovery Using x8scan
-
-<!-- Add Screenshot 1 here: x8scan output showing the available GET parameters. -->
-
-### Screenshot 2 – Crafted Payload Submitted Through the `cat` Parameter
-
-<!-- Add Screenshot 2 here: browser showing the crafted URL or submitted payload. -->
-
-### Screenshot 3 – JavaScript Alert Confirming Execution
-
-<!-- Add Screenshot 3 here: alert dialog displaying 1. -->
-
-### Screenshot 4 – Reflected Payload in Page Source
-
-<!-- Add Screenshot 4 here: page source showing the reflected input. -->
-
-**Affected Parameter:** `cat`
-
 **Test Payload:**
 
 ```html
 Priyanshxop'"><><ScRipT>a\u006cert(1)</ScRipT>
 ```
 
-**Observed Result:** The browser displayed a JavaScript alert containing `1`, confirming that the supplied input resulted in JavaScript execution.
+
+## Proof of Concept (POC)
+
+### Screenshot 1 – GET Parameter Discovery Using x8scan
+
+<img width="959" height="283" alt="image" src="https://github.com/user-attachments/assets/a81ff318-1262-4a78-b9d9-9284044f5909" />
+
+### Screenshot 2 – Crafted Payload Submitted Through the `cat` Parameter
+
+<img width="959" height="500" alt="image" src="https://github.com/user-attachments/assets/90516a24-c9aa-4dce-a536-19bbcef1a97c" />
+
+### Screenshot 3 – JavaScript Alert Confirming Execution
+
+<img width="959" height="500" alt="image" src="https://github.com/user-attachments/assets/528874b4-32b8-4432-9120-16f2f9fcd61c" />
+
+### Screenshot 4 – Reflected Payload in Page Source
+
+<img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/5e73a04a-5ecd-4304-a198-5b64fad8dc36" />
+
+**Affected Parameter:** `cat`
+
 
 ## Impact
 
@@ -59,8 +60,6 @@ Priyanshxop'"><><ScRipT>a\u006cert(1)</ScRipT>
 - **Session Risk:** Potentially expose session-related information, depending on cookie protections and application design.
 - **Content Manipulation:** Modify page content or display deceptive elements.
 - **Unauthorized Actions:** Potentially perform actions through a victim's session where application protections permit.
-
-The alert confirms script execution; session hijacking, account takeover, and unauthorized actions were not independently tested.
 
 ## Remediation
 
