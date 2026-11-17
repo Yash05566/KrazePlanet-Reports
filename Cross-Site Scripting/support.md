@@ -25,6 +25,18 @@ The application accepts First Name and Last Name values through GET parameters. 
 4. Check whether a JavaScript alert displaying `1` appears.
 5. Inspect the page source or DOM to verify reflection in both parameters.
 
+### HTTP Request / URL
+
+```http
+https://support.pwnedbox.site/?fname=%27%22%3C%3E%3Cbody%20onpageshow%3Dalert%281%29%3E&lname=%27%22%3C%3E%3Cbody%20onpageshow%3Dalert%281%29%3E
+```
+
+### Payload
+
+```html
+'"<><body onpageshow=alert(1)>
+```
+
 ## Proof of Concept (POC)
 
 ### Screenshot 1 – Payload Entered in Both Fields
@@ -39,27 +51,16 @@ The application accepts First Name and Last Name values through GET parameters. 
 
 <img width="959" height="504" alt="image" src="https://github.com/user-attachments/assets/3cf0dd85-f218-4607-bbbf-952ecd252e72" />
 
-### HTTP Request / URL
-
-```http
-https://support.pwnedbox.site/?fname=%27%22%3C%3E%3Cbody%20onpageshow%3Dalert%281%29%3E&lname=%27%22%3C%3E%3Cbody%20onpageshow%3Dalert%281%29%3E
-```
-
-### Payload
-
-```html
-'"<><body onpageshow=alert(1)>
-```
 
 ## Impact
 
-- **JavaScript Execution:** A crafted URL may execute JavaScript in a visitor's browser.
-- **Page Manipulation:** Injected script may modify displayed content or create deceptive elements.
-- **Targeted Attacks:** A crafted link may be distributed to users to trigger the issue.
+- **Session Exposure:** Compromise active user sessions through injected scripts.
+- **Account Takeover:** Potentially gain unauthorized access to user accounts.
+- **Unauthorized Access:** Perform actions within the application using a victim's session.
 
 ## Remediation
 
-1. **Context-Aware Output Encoding:** Encode user-controlled values for the HTML attribute context before inserting them into input elements.
-2. **Parameter Handling:** Apply consistent secure handling to both `fname` and `lname`.
-3. **Safe Output Practices:** Avoid inserting raw user input into HTML.
-4. **Content Security Policy:** Use a restrictive CSP as an additional layer of protection.
+- **HTML Sanitization:** Safely handle HTML tags submitted in the Report Name field.
+- **Script Filtering:** Prevent execution of untrusted JavaScript code.
+- **Output Encoding:** Use PHP's `htmlspecialchars()` before displaying user-controlled data.
+- **WAF Implementation:** Use Cloudflare WAF as an additional layer against XSS attacks.
