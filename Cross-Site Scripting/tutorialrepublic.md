@@ -35,13 +35,6 @@ The search parameter `q` accepts user input that is reflected in the page respon
 
 <img width="940" height="497" alt="image" src="https://github.com/user-attachments/assets/3103fe66-21b0-49e3-8028-736970a7d093" />
 
-
-### Payload
-
-```html
-<script>alert(1)</script>
-```
-
 ### Request URL
 
 ```text
@@ -50,20 +43,15 @@ https://tutorialrepublic.pwnedbox.site/?q=<script>alert(1)</script>
 
 ## Impact
 
-An attacker could create a specially crafted URL and trick a user into opening it. If the user visits the URL, the injected JavaScript may run in their browser.
-
-Depending on the affected page and the victim's session, this could be used to:
-
-- Display fake content or login forms.
-- Redirect the user to another website.
-- Perform actions as the victim where the application allows it.
-- Access information available to JavaScript in the page.
+- Execute arbitrary JavaScript within the context of the vulnerable website.
+- Modify the webpage's content or display misleading information.
+- Account Takeover.
 
 **Observed Result:** The `alert(1)` popup appeared after submitting the payload. This confirms JavaScript execution. Further impact was not tested.
 
 ## Remediation
 
-- Encode user-controlled data before displaying it in the page.
+- Apply context-aware HTML encoding to all user-controlled input before displaying it in the response.
 - Validate and sanitize input where required.
 - Avoid inserting untrusted input into HTML using unsafe methods such as `innerHTML`.
 - Apply a suitable Content Security Policy (CSP) as an additional security measure.
