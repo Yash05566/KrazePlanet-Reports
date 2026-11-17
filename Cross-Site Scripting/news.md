@@ -1,4 +1,5 @@
-# Reflected XSS – HTML Tag Filter Bypass
+## Title
+Reflected XSS – HTML Tag Filter Bypass
 
 ## Description
 
@@ -29,23 +30,27 @@ The application accepts user-controlled input through the `title` GET parameter 
 
 ### Screenshot 1 – GET Parameter Discovery
 
-<!-- Add Screenshot 1 here: x8scan output showing the discovered GET parameters. -->
+<img width="959" height="260" alt="image" src="https://github.com/user-attachments/assets/8a99da97-ca8b-40cd-9a64-c172cdca82b9" />
 
 ### Screenshot 2 – Crafted Payload in the Title Parameter
 
-<!-- Add Screenshot 2 here: browser showing the crafted URL or submitted payload. -->
+<img width="959" height="506" alt="image" src="https://github.com/user-attachments/assets/330c8844-dc11-49cb-a858-71dbc5d5328e" />
+
 
 ### Screenshot 3 – JavaScript Confirmation Dialog
 
-<!-- Add Screenshot 3 here: confirmation dialog displaying 1. -->
+<img width="959" height="260" alt="image" src="https://github.com/user-attachments/assets/96c1a7ab-9d6e-49a0-a470-87e7103ee326" />
+
 
 ### Screenshot 4 – Rendered Page with Injected HTML
 
-<!-- Add Screenshot 4 here: rendered page showing the injected HTML content. -->
+<img width="959" height="504" alt="image" src="https://github.com/user-attachments/assets/20ae8661-80bc-4450-bac8-00979e1c893f" />
+
 
 ### Screenshot 5 – Reflected Payload in Page Source
 
-<!-- Add Screenshot 5 here: page source showing the reflected payload in the HTML title context. -->
+<img width="959" height="504" alt="image" src="https://github.com/user-attachments/assets/bf352531-9448-402f-8c27-23216ebfa4ed" />
+
 
 **Affected Parameter:** `title`
 
@@ -58,7 +63,6 @@ The application accepts user-controlled input through the `title` GET parameter 
 - **Phishing Risk:** Display deceptive content to unsuspecting visitors.
 - **Crafted-Link Abuse:** Trigger the payload when a victim opens a specially crafted URL.
 
-The confirmation dialog demonstrates JavaScript execution. Session hijacking, account takeover, and unauthorized actions were not independently tested.
 
 ## Remediation
 
