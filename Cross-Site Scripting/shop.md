@@ -1,4 +1,6 @@
-# Reflected XSS – Category Filter
+## Title
+ 
+Reflected XSS – Category Filter
 
 ## Description
 
@@ -15,7 +17,7 @@ The shop application reflects the value supplied through the `sort` GET paramete
 1. Open the following crafted URL in a browser:
 
    ```text
-   https://shop.pwnedbox.site/?category=all&sort=Priyanshxop%27%22%3E%3CScRipT%3Ea\u006cert(1)%3C/ScRipT%3E
+   https://shop.pwnedbox.site/?category=all&sort=Yash%27%22%3E%3CScRipT%3Ea\u006cert(1)%3C/ScRipT%3E
    ```
 
 2. Allow the shop page to load with the crafted value supplied through the `sort` parameter.
@@ -25,37 +27,37 @@ The shop application reflects the value supplied through the `sort` GET paramete
 6. Locate the sorting label and category navigation links.
 7. Verify how the supplied `sort` value is reflected in those elements.
 
-## Proof of Concept (POC)
-
-### Screenshot 1 – Shop Page Showing Category and Sorting Options
-
-<!-- Add Screenshot 1 here: shop page displaying the original category and sorting options. -->
-
-### Screenshot 2 – JavaScript Alert Confirming Execution
-
-<!-- Add Screenshot 2 here: alert dialog displaying 1 after opening the crafted URL. -->
-
-### Screenshot 3 – Reflected Payload in Page Source
-
-<!-- Add Screenshot 3 here: page source showing the reflected value in the sorting label and category navigation links. -->
 
 **Affected Parameter:** `sort`
 
 **Test Payload:**
 
 ```html
-Priyanshxop'"><ScRipT>a\u006cert(1)</ScRipT>
+Yash'"><ScRipT>a\u006cert(1)</ScRipT>
 ```
 
-**Observed Result:** The browser displayed a JavaScript alert containing `1`, confirming script execution through the reflected `sort` parameter.
+## Proof of Concept (POC)
+
+### Screenshot 1 – Shop Page Showing Category and Sorting Options
+
+<img width="956" height="506" alt="image" src="https://github.com/user-attachments/assets/64f98501-c6a3-4aa3-be83-5c4e6e372e00" />
+
+### Screenshot 2 – Crafted Payload and JavaScript Alert
+
+<img width="959" height="500" alt="image" src="https://github.com/user-attachments/assets/3abfd146-2984-4d4f-813b-8cc9532679ad" />
+<img width="959" height="299" alt="image" src="https://github.com/user-attachments/assets/21166438-5cfc-4279-9470-24a490260a4d" />
+
+
+### Screenshot 3 – Reflected Payload in Page Source
+
+<img width="959" height="500" alt="image" src="https://github.com/user-attachments/assets/344fd2d3-1840-41c9-95bf-f114ec9e978f" />
+
 
 ## Impact
 
 - **Session Hijacking Risk:** Injected scripts may expose or misuse session-related information, depending on cookie protections.
 - **Account Compromise:** Successful exploitation could increase the risk of unauthorized access to user accounts.
 - **Unauthorized Actions:** Scripts may perform actions through a victim's active session, subject to application controls.
-
-The alert confirms JavaScript execution. Session hijacking, account takeover, and unauthorized actions were not independently tested.
 
 ## Remediation
 
