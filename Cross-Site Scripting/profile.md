@@ -25,16 +25,6 @@ The page accepts a value through the Last Name field and sends it using the `lna
 4. Click **Submit**.
 5. Observe the JavaScript alert displaying `1`.
 
-## POC (Proof of Concept)
-
-### Screenshot 1 – Payload Entered in the Last Name Field
-
-<img width="940" height="493" alt="image" src="https://github.com/user-attachments/assets/b3be54f3-7c82-41f1-a061-b8aed70adda4" />
-
-### Screenshot 2 – JavaScript Alert Executed
-
-<img width="940" height="486" alt="image" src="https://github.com/user-attachments/assets/c3c25052-a9d3-4a99-be71-9882134692a5" />
-
 ### Payload Used
 
 ```html
@@ -47,18 +37,22 @@ The page accepts a value through the Last Name field and sends it using the `lna
 https://profile.pwnedbox.site/?fname=&lname=%22%3E%3Cimg+src%3Dx+onerror%3D%22%26%2397%3B%26%23108%3B%26%23101%3B%26%23114%3B%26%23116%3B%26%2340%3B%26%2349%3B%26%2341%3B%22%3E
 ```
 
+## POC (Proof of Concept)
+
+### Screenshot 1 – Payload Entered in the Last Name Field
+
+<img width="940" height="493" alt="image" src="https://github.com/user-attachments/assets/b3be54f3-7c82-41f1-a061-b8aed70adda4" />
+
+### Screenshot 2 – JavaScript Alert Executed
+
+<img width="940" height="486" alt="image" src="https://github.com/user-attachments/assets/c3c25052-a9d3-4a99-be71-9882134692a5" />
+
+
 ## Impact
 
-A crafted link using the affected `lname` parameter may execute JavaScript when another visitor opens it. Depending on the application's features and the visitor's session, this could potentially be used to:
-
 - Display misleading content in the page.
-- Redirect the visitor to an unwanted website.
 - Show a fake form or prompt to collect information.
 - Attempt actions available to the visitor's active session.
-
-**Actual Impact:** The submitted payload executed successfully and displayed a browser alert containing `1`. No account takeover or data theft was demonstrated.
-
-**Potentially Affected Users:** Visitors who open a crafted URL containing the vulnerable `lname` parameter.
 
 ## Remediation
 
