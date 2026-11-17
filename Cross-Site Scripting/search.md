@@ -48,44 +48,19 @@ The GET Parameter Reflection page accepts values in the First Name and Last Name
 <img width="940" height="258" alt="image" src="https://github.com/user-attachments/assets/4c454ddf-5bfc-4e37-bc2b-98676f0ccb4a" />
 
 
-### Payloads Used
-
-**First Name (`fname`):**
-
-```html
-yash1'"><script>alert(1)</script>
-```
-
-**Last Name (`lname`):**
-
-```html
-yash2'"><script>alert(2)</script>
-```
-
 ### HTTP Request / URL
 
 ```http
 https://search.pwnedbox.site/?fname=yash1%27%22%3E%3Cscript%3Ealert%281%29%3C%2Fscript%3E&lname=yash2%27%22%3E%3Cscript%3Ealert%282%29%3C%2Fscript%3E
 ```
-
 ## Impact
 
-An attacker could prepare a URL containing crafted values for the name fields and persuade another person to open it. If the vulnerable page processes those values in the same way, script code may run in that person's browser.
-
-Possible consequences depend on the application's features and the victim's access. They may include:
-
-- Showing misleading content in the page.
-- Redirecting the visitor to an unwanted website.
-- Presenting a fake form to collect information.
-- Attempting actions within the victim's active session.
-
-**Actual Impact:** Both test scripts executed successfully. The browser displayed two separate alert popups, first with `1` and then with `2`. No account takeover or data theft was tested.
-
-**Potentially Affected Users:** Visitors who open a crafted URL targeting the `fname` and `lname` parameters.
+- Trigger malicious scripts in users' browsers.
+- Change displayed content or webpage elements.
+- Trick visitors through fake or deceptive content.
 
 ## Remediation
 
-- Apply context-appropriate output encoding to values from `fname` and `lname` before displaying them.
-- Treat all URL parameters as untrusted input.
-- Avoid inserting raw user-controlled values into HTML or unsafe DOM methods.
-- Use a restrictive Content Security Policy (CSP) as an additional layer of protection.
+- **Secure Output Handling:** Encode untrusted data before displaying it.
+- **Parameter Checking:** Verify and filter incoming GET requests.
+- **CSP Protection:** Restrict unauthorized scripts using a suitable CSP.
