@@ -1,12 +1,12 @@
-# Reflected XSS through Unvalidated GET Parameters
+## Title
+
+Reflected XSS through Unvalidated GET Parameters
 
 ## Description
 
 **Affected URL:** https://tickets.pwnedbox.site/
 
 **Vulnerability:** Reflected Cross-Site Scripting (XSS)
-
-**Affected Parameter:** `lname`
 
 The Tickets page reflects the value supplied through the `lname` GET parameter into the HTML response without proper context-aware output encoding. The tested input was able to break out of the expected HTML attribute context and execute JavaScript in the browser. During testing, the `fname` value appeared to be encoded, while the `lname` value was reflected without proper HTML attribute encoding.
 
@@ -26,13 +26,13 @@ The Tickets page reflects the value supplied through the `lname` GET parameter i
 
 ### Screenshot 1 – Payload Entered in the First Name and Last Name Fields
 
-![Payload entered in the form](images/tickets-payload.png)
+<img width="959" height="504" alt="image" src="https://github.com/user-attachments/assets/5640f5c9-f6c5-43d5-b88f-8d6886040043" />
+
 
 ### Screenshot 2 – JavaScript Alert Execution
 
-![JavaScript alert displaying 1](images/tickets-alert.png)
+<img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/00c7d388-419a-47bd-bf61-66edd895f4c3" />
 
-**Tested Parameter:** `lname`
 
 **Payload:**
 
@@ -48,8 +48,6 @@ The Tickets page reflects the value supplied through the `lname` GET parameter i
 - **Content Manipulation:** Potentially modify page content or display misleading elements.
 - **Phishing Risk:** Present deceptive content to visitors.
 - **Crafted-Link Abuse:** Trigger the vulnerability when a victim opens a specially crafted URL.
-
-The test confirms JavaScript execution through `lname`. Additional impacts, such as session compromise or account takeover, were not tested.
 
 ## Remediation
 
