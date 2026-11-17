@@ -1,4 +1,5 @@
-# Reflected XSS – String Concatenation Bypass
+## Title 
+Reflected XSS – String Concatenation Bypass
 
 ## Description
 
@@ -19,7 +20,7 @@ A crafted payload combining a mixed-case script tag with a Unicode escape sequen
 3. Open the following crafted URL in a browser:
 
    ```text
-   https://portal.pwnedbox.site/?cat=Priyanshxop%27%22%3C%3E%3CScRipT%3Ea\u006cert(1)%3C/ScRipT%3E
+   https://portal.pwnedbox.site/?cat=Yash%27%22%3C%3E%3CScRipT%3Ea\u006cert(1)%3C/ScRipT%3E
    ```
 
 4. Allow the page to load with the crafted value supplied through the `cat` parameter.
@@ -27,31 +28,32 @@ A crafted payload combining a mixed-case script tag with a Unicode escape sequen
 6. Check for a JavaScript alert displaying `1`.
 7. Dismiss the alert and inspect the page source or HTML response to locate the reflected payload.
 
-## Proof of Concept (POC)
-
-### Screenshot 1 – GET Parameter Discovery Using x8scan
-
-<!-- Add Screenshot 1 here: x8scan output showing the discovered GET parameters. -->
-
-### Screenshot 2 – Crafted Payload Reflected Through the `cat` Parameter
-
-<!-- Add Screenshot 2 here: browser showing the crafted URL and reflected input. -->
-
-### Screenshot 3 – JavaScript Alert Confirming Execution
-
-<!-- Add Screenshot 3 here: alert dialog displaying 1. -->
-
-### Screenshot 4 – Reflected Payload in Page Source
-
-<!-- Add Screenshot 4 here: page source showing the reflected payload. -->
-
 **Affected Parameter:** `cat`
 
 **Test Payload:**
 
 ```html
-Priyanshxop'"><><ScRipT>a\u006cert(1)</ScRipT>
+Yash'"><><ScRipT>a\u006cert(1)</ScRipT>
 ```
+
+## Proof of Concept (POC)
+
+### Screenshot 1 – GET Parameter Discovery Using x8scan
+
+<img width="959" height="272" alt="image" src="https://github.com/user-attachments/assets/1f8f2e40-d5d5-4d54-9044-c6326c9b356e" />
+
+### Screenshot 2 – Crafted Payload Reflected Through the `cat` Parameter
+
+<img width="959" height="504" alt="image" src="https://github.com/user-attachments/assets/43d45e91-e6f2-4585-b384-5efd2bffa727" />
+
+### Screenshot 3 – JavaScript Alert Confirming Execution
+
+<img width="959" height="504" alt="image" src="https://github.com/user-attachments/assets/d7b46601-ead0-4ff3-a017-ed91001e05b3" />
+
+### Screenshot 4 – Reflected Payload in Page Source
+
+<img width="959" height="506" alt="image" src="https://github.com/user-attachments/assets/e4e2a6b3-1c05-416c-8574-315f4655f9fa" />
+
 
 **Observed Result:** A JavaScript alert displaying `1` appeared in the browser, confirming script execution through the `cat` parameter.
 
@@ -61,8 +63,6 @@ Priyanshxop'"><><ScRipT>a\u006cert(1)</ScRipT>
 - **Session Exposure:** Potentially access session-related information, depending on cookie settings and application protections.
 - **Content Manipulation:** Change displayed page content or introduce deceptive elements.
 - **Unauthorized Actions:** Potentially perform actions through a victim's session where application protections permit.
-
-The alert confirms JavaScript execution. Session hijacking, account takeover, and unauthorized actions were not independently tested.
 
 ## Remediation
 
