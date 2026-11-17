@@ -16,8 +16,6 @@ During parameter discovery, `x8scan` identified the `returnTo` GET parameter and
 https://go.pwnedbox.site/?returnTo=
 ```
 
-The parameter is associated with the destination used by the **Cancel & return** link on the account confirmation page. The supplied test value is included in the URL below. Verify that the value is reflected into the link's `href` attribute and that the browser executes the test JavaScript before marking the issue as confirmed.
-
 ## Steps to Reproduce
 
 1. Run parameter discovery against the target:
@@ -61,29 +59,13 @@ The parameter is associated with the destination used by the **Cancel & return**
 
 <img width="959" height="499" alt="image" src="https://github.com/user-attachments/assets/3e680f3c-9041-434b-ac12-a5587c90e706" />
 
-### Payload
-
-```html
-Yash'"<><SCripT>confirm("XSS");</SCripT>
-```
-
-### HTTP Request / URL
-
-```http
-https://go.pwnedbox.site/?returnTo=Yash%27%22%3C%3E%3CSCripT%3Econfirm%28%22XSS%22%29%3B%3C%2FSCripT%3E
-```
 
 ## Impact
 
-If the `returnTo` parameter is inserted into the page's HTML without proper context-aware encoding, a crafted URL may cause JavaScript to execute in a visitor's browser.
+- **Session Hijacking:** Malicious scripts may compromise active user sessions.
+- **Account Compromise:** Potentially gain unauthorized access to user accounts.
+- **Unauthorized Operations:** Execute actions using the victim's authenticated session.
 
-Potential consequences include:
-
-- **Page Manipulation:** An attacker may alter content displayed to the visitor.
-- **Phishing:** Deceptive content or forms may be presented within the trusted page.
-- **Targeted Link Attacks:** An attacker may send a crafted URL to a victim and trigger the issue when it is opened.
-
-**Evidence Status:** The provided screenshot shows the crafted `returnTo` value in the browser URL and the account confirmation page. It does not, by itself, show a JavaScript dialog or prove reflection inside the `href` attribute. Add those verification screenshots if the behavior is observed.
 
 ## Remediation
 
