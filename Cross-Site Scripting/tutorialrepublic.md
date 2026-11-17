@@ -53,5 +53,4 @@ https://tutorialrepublic.pwnedbox.site/?q=<script>alert(1)</script>
 
 - Apply context-aware HTML encoding to all user-controlled input before displaying it in the response.
 - Validate and sanitize input where required.
-- Avoid inserting untrusted input into HTML using unsafe methods such as `innerHTML`.
 - Apply a suitable Content Security Policy (CSP) as an additional security measure.
