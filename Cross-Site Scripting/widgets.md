@@ -1,4 +1,6 @@
-# Reflected XSS – Reddit
+## Title
+
+Reflected XSS – Reddit
 
 ## Description
 
@@ -15,7 +17,7 @@ During verification, the supplied test value escaped the intended attribute cont
 3. Open the following test URL in a browser:
 
    ```text
-   https://widgets.pwnedbox.site/?post_id=%22Priyanshxop%27%22%3C%3E%3Cscript%3Ealert(1)%3C/script%3E
+   https://widgets.pwnedbox.site/?post_id=%22Yash%27%22%3E%3Cscript%3Ealert(1)%3C/script%3E
    ```
 
 4. Wait for the page to finish loading and check for the JavaScript alert showing `1`.
@@ -25,17 +27,18 @@ During verification, the supplied test value escaped the intended attribute cont
 
 ## POC (Proof of Concept)
 
-**Screenshot 1 – Parameter testing:** The browser address bar contains the modified `post_id` request used to test the page.
+**Screenshot 1 – ** x8scan Output Showing Discovered GET Parameters
 
-<img width="1900" height="266" alt="Modified request used for testing" src="https://github.com/user-attachments/assets/9ed9d004-0d97-41e5-8e74-8d6e9e15af94" />
+<img width="959" height="267" alt="image" src="https://github.com/user-attachments/assets/43c72fb7-3065-4934-92ec-e6a87d3e4fa4" />
 
-**Screenshot 2 – Execution evidence:** The browser displays the JavaScript dialog after processing the crafted input.
+**Screenshot 2 – ** Crafted Payload and JavaScript Alert
 
-<img width="1912" height="972" alt="Browser dialog confirming script execution" src="https://github.com/user-attachments/assets/85c88da2-60c4-4af3-8ad7-d1d3964ff316" />
+<img width="959" height="505" alt="image" src="https://github.com/user-attachments/assets/4a975805-1098-4d79-b606-d6de51990dc8" />
+<img width="959" height="268" alt="image" src="https://github.com/user-attachments/assets/71487f31-666d-4785-b0a1-3886aaa7e125" />
 
-**Screenshot 3 – Reflection location:** The HTML source reveals the user-supplied value within the button markup, specifically its `id` attribute.
+**Screenshot 3 – ** Reflected Payload in Page Source
 
-<img width="1918" height="967" alt="Source inspection of reflected button attribute" src="https://github.com/user-attachments/assets/e602f2fb-30a4-46fe-92a7-64319628ce4e" />
+<img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/ebacfe12-0f4c-4d17-93c8-655a3f832e3a" />
 
 ## Impact
 
