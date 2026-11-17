@@ -1,4 +1,6 @@
-# Self XSS – POST-Based Reflected XSS
+## Title
+
+Self XSS – POST-Based Reflected XSS
 
 ## Description
 
@@ -15,7 +17,7 @@ In testing, a crafted value was submitted through the form and the browser execu
 3. Enter this test string:
 
    ```text
-   Priyanshxop%27"<><ScRipT>a\u006cert(1)</ScRipT>
+   Yash'"><script>alert(1)</script>
    ```
 
 4. Submit the form by selecting **Enter**.
@@ -26,17 +28,17 @@ In testing, a crafted value was submitted through the form and the browser execu
 
 ## POC (Proof of Concept)
 
-**Screenshot 1 – Form input setup:** The crafted test value is placed in the Name field before the form is submitted.
+**Screenshot 1 – ** The crafted test value is placed in the Name field before the form is submitted.
 
-<img width="1916" height="972" alt="Crafted value entered in the Name field" src="https://github.com/user-attachments/assets/6231e1d9-b185-4025-bfdb-a8c0afa56e18" />
+<img width="959" height="502" alt="image" src="https://github.com/user-attachments/assets/3ea40776-3ad6-4ef7-b635-bff3ec235a6f" />
 
-**Screenshot 2 – Browser execution result:** The alert box appears after the form submission, showing that the injected script ran.
+**Screenshot 2 – ** The alert box appears after the form submission, showing that the injected script ran.
 
-<img width="1918" height="962" alt="Alert shown after form submission" src="https://github.com/user-attachments/assets/29554b5c-11e6-479b-bd31-21e3240feca4" />
+<img width="959" height="230" alt="image" src="https://github.com/user-attachments/assets/a09f5996-7e70-443d-9659-7a6ff3f7674e" />
 
-**Screenshot 3 – Response reflection:** The returned page source contains the submitted value in the greeting paragraph.
+**Screenshot 3 – ** The returned page source contains the submitted value in the greeting paragraph.
 
-<img width="1916" height="966" alt="Submitted value reflected in greeting markup" src="https://github.com/user-attachments/assets/53a7a467-6cad-40d9-8e86-f0ad225a564a" />
+<img width="959" height="506" alt="image" src="https://github.com/user-attachments/assets/5d218af9-9ac3-46e6-90b4-5227701bd314" />
 
 ## Impact
 
