@@ -1,4 +1,5 @@
-# Reflected XSS – Multi-Parameter Filter Evasion
+## Title 
+Reflected XSS via Improper Input Filtering
 
 ## Description
 
@@ -19,7 +20,7 @@ The reflected content indicates that the parameter is not fully handled in a con
 3. Open the following crafted URL in a browser:
 
    ```text
-   https://checkout.pwnedbox.site/?cat=Priyanshxop%27%22%3C%3EScRipT%3Ea%5Cu006cert(1)%3C/ScRipT%3E
+   https://checkout.pwnedbox.site/?cat=Yash%27%22%3E%3C%3E%3CSCripT%3Ea\u006cert(1)%3C/SCripT%3E
    ```
 
 4. Allow the page to load with the crafted value supplied through the `cat` parameter.
@@ -31,19 +32,19 @@ The reflected content indicates that the parameter is not fully handled in a con
 
 ### Screenshot 1 – GET Parameter Discovery Using x8scan
 
-<!-- Add Screenshot 1 here: x8scan output showing the discovered GET parameters. -->
+<img width="959" height="279" alt="image" src="https://github.com/user-attachments/assets/330aabe1-ba12-48e0-9e97-a3ebeb001f05" />
 
 ### Screenshot 2 – Crafted Input Submitted Through the `cat` Parameter
 
-<!-- Add Screenshot 2 here: browser showing the crafted URL or submitted input. -->
+<img width="959" height="501" alt="image" src="https://github.com/user-attachments/assets/ff952d17-f36e-412a-9635-b99622ae6bac" />
 
 ### Screenshot 3 – Reflected Input in the Browser Response
 
-<!-- Add Screenshot 3 here: page response showing the reflected input. -->
+<img width="959" height="247" alt="image" src="https://github.com/user-attachments/assets/036d7024-2ae2-4fa8-b373-5c14e49dd1ae" />
 
 ### Screenshot 4 – Reflected Input in Page Source
 
-<!-- Add Screenshot 4 here: page source showing how the `cat` parameter is reflected. -->
+<img width="959" height="495" alt="image" src="https://github.com/user-attachments/assets/23a10b31-dcb4-4677-bf16-e786fe6664b8" />
 
 **Affected Parameter:** `cat`
 
