@@ -37,35 +37,15 @@ The search feature does not safely handle the value supplied by the user. During
 
 <img width="940" height="492" alt="image" src="https://github.com/user-attachments/assets/287882e3-8989-4b6a-9101-edb3916ae303" />
 
-
-### Payload Used
-
-```html
-<script>alert(1)</script>
-```
-
-### HTTP Request / URL
-
-```http
-https://freshcart.pwnedbox.site/index.php?q=%3Cscript%3Ealert%281%29%3C%2Fscript%3E
-```
-
 ## Impact
 
-A crafted search link could cause the supplied JavaScript to run when another user opens it. Depending on the pages and actions available to that user, this type of issue may be misused to:
-
-- Show altered or misleading information on the page.
-- Send the user to an external website.
-- Present a fake sign-in prompt.
-- Attempt actions using the user's current session.
-
-**Observed Result:** The test payload executed and displayed an alert containing `1`. No account access, data theft, or other impact was demonstrated during this test.
-
-**Potentially Affected Users:** Visitors who open a crafted URL containing the payload in the `q` parameter.
+- Execute JavaScript in a user's browser.
+- Display misleading content or fake login forms..
+- Perform actions through the victim's active session, if the application allows it.
 
 ## Remediation
 
-- Encode search terms before inserting them into the HTML response.
-- Treat all search input as untrusted, even when it comes from a URL.
-- Use safe DOM APIs and avoid placing raw user input into HTML.
-- Add a Content Security Policy (CSP) as a secondary protection.
+- Encode user-controlled output before displaying it in the page.
+- Validate and sanitize input where appropriate.
+- Implement a restrictive Content Security Policy (CSP) as an additional security layer.
+
