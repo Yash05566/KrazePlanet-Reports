@@ -25,16 +25,6 @@ The PUBG Community page uses the `p` GET parameter for its filter value. During 
 4. Click **Search**.
 5. Observe the confirmation dialog displaying `XSS`.
 
-## POC (Proof of Concept)
-
-### Screenshot 1 – Payload Entered in the Community Filter
-
-<img width="959" height="505" alt="image" src="https://github.com/user-attachments/assets/96919fd5-4e23-4129-8d77-0bc6fc7d5136" />
-
-### Screenshot 2 – JavaScript Confirmation Dialog
-
-<img width="959" height="397" alt="image" src="https://github.com/user-attachments/assets/57f8abfe-40f3-4470-b901-214958f8b8e2" />
-
 ### Payload Used
 
 ```html
@@ -47,18 +37,25 @@ Yash'"><SCripT>confirm("XSS");</SCripT>
 https://assets.pwnedbox.site/?p=Yash%27%22%3CScRipT%3Econfirm%28%22XSS%22%29%3B%3C%2FScRipT%3E
 ```
 
-## Impact
 
-A crafted link containing the affected `p` parameter may execute JavaScript when a visitor opens it. Depending on the application's features and the visitor's session, this could potentially allow an attacker to:
+## POC (Proof of Concept)
+
+### Screenshot 1 – Payload Entered in the Community Filter
+
+<img width="959" height="505" alt="image" src="https://github.com/user-attachments/assets/96919fd5-4e23-4129-8d77-0bc6fc7d5136" />
+
+### Screenshot 2 – JavaScript Confirmation Dialog
+
+<img width="959" height="397" alt="image" src="https://github.com/user-attachments/assets/57f8abfe-40f3-4470-b901-214958f8b8e2" />
+
+
+## Impact
 
 - Change or inject content displayed on the page.
 - Show misleading messages or fake interface elements.
-- Redirect visitors to an unwanted website.
+- Increase the risk of unauthorized account access.
 - Attempt actions available to the visitor's active session.
 
-**Actual Impact:** The test payload executed successfully and displayed a JavaScript confirmation dialog containing `XSS`. No account compromise or data theft was demonstrated.
-
-**Potentially Affected Users:** Visitors who open a crafted URL containing the vulnerable `p` parameter.
 
 ## Remediation
 
