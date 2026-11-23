@@ -26,7 +26,7 @@ A Stored Cross-Site Scripting (XSS) issue was found in the product review featur
 6. In the **Detailed Review Comments** field, enter the following payload:
 
    ```html
-   Yash"><><Img SrC=x OnErRoR=confirm('Des')>
+   Yash"><><Img SrC=x OnErRoR=confirm('Comment')>
    ```
 
 7. Select **Submit Product Review** to post the review.
@@ -37,15 +37,15 @@ A Stored Cross-Site Scripting (XSS) issue was found in the product review featur
 
 **Screenshot 1 – Review form populated with test payloads**
 
-<!-- Add Screenshot 1 here: Show the XSS payloads entered in the review headline and detailed comments fields. -->
+<img width="959" height="506" alt="image" src="https://github.com/user-attachments/assets/26e9bffd-17bf-4491-8fc8-a29f39d87329" />
 
 **Screenshot 2 – Confirmation dialog triggered by the review content**
 
-<!-- Add Screenshot 2 here: Show the JavaScript confirmation dialog displaying “Des” after the review is submitted. -->
+<img width="959" height="500" alt="image" src="https://github.com/user-attachments/assets/9214ee5c-db6a-412a-b96c-8f7f05bec0d7" />
 
 **Screenshot 3 – Stored payload visible in the customer review markup**
 
-<!-- Add Screenshot 3 here: Show the page source containing the submitted payload in the customer review title and body. -->
+<img width="959" height="498" alt="image" src="https://github.com/user-attachments/assets/ccc5c3b2-3c6f-4ea6-8b14-8c176b390314" />
 
 ## Impact
 
