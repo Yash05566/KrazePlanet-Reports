@@ -13,7 +13,7 @@ A Stored Cross-Site Scripting (XSS) issue was found in the Profile Signature fea
 3. Find the **Profile Signature** field.
 4. Enter the following test payload:
 
-   `Yash"><><Img SrC=x OnErRoR=confirm(3)>`
+   `Yash"><><Img SrC=x OnErRoR=confirm(111)>`
 
 5. Select **Save Profile** to save the signature.
 6. Visit a forum thread or post where the signature appears.
@@ -24,15 +24,15 @@ A Stored Cross-Site Scripting (XSS) issue was found in the Profile Signature fea
 
 **Screenshot 1 – Profile fields populated with the test payload**
 
-<img width="1891" height="967" alt="Profile fields containing the XSS test input" src="https://github.com/user-attachments/assets/048354ad-0822-43f2-81c4-23deb7138c46" />
+<img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/487de314-bfe5-4d0a-8142-92a2ca8000f2" />
 
 **Screenshot 2 – Saved profile and JavaScript confirmation**
 
-<img width="1918" height="962" alt="Profile save confirmation and JavaScript dialog" src="https://github.com/user-attachments/assets/b1940a35-cb20-4f8b-9a94-20294ba6ca3b" />
+<img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/39aec5d4-f391-4680-a46e-b44a57ec375e" />
 
 **Screenshot 3 – Stored signature visible in the page DOM**
 
-<img width="1918" height="960" alt="DOM showing the stored profile signature" src="https://github.com/user-attachments/assets/fce872bb-eef6-44ea-81be-0d60a142805c" />
+<img width="959" height="502" alt="image" src="https://github.com/user-attachments/assets/700a4e99-fbf3-4e36-9a9b-c5a11f4b2324" />
 
 ## Impact
 - It can execute attacker-controlled JavaScript in the browser of users viewing a post with the malicious signature.
@@ -40,7 +40,7 @@ A Stored Cross-Site Scripting (XSS) issue was found in the Profile Signature fea
 - It could let an attacker perform unauthorized actions through affected users' accounts, including changing forum data or misusing their permissions.
 
 ## Remediation
-- Sanitize allowed signature HTML and reject unsafe elements or event-handler attributes before storing or displaying it.
-- Encode user-controlled content for its output context and avoid rendering untrusted data as raw HTML.
-- In PHP applications, use context-appropriate escaping such as `htmlspecialchars()` when outputting text into HTML.
+- Sanitize user input and block unsafe HTML tags and JavaScript event handlers.
+- Use proper output encoding before displaying user-submitted content.
+- Apply PHP htmlspecialchars() to safely render user input.
 - Add a restrictive Content Security Policy (CSP) and use WAF protections, such as Cloudflare rules, as supplementary defenses rather than relying on them as the primary fix.
