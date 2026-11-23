@@ -15,7 +15,7 @@ Stored Cross-Site Scripting (XSS) was identified in the Community Hub applicatio
 3. Place the following payload in a profile field controlled by the user, such as First Name, About Me, or Signature:
 
    ```html
-   Priyansh'"><><img src=x onerror=confirm(1)>
+   Yash'"><><img src=x onerror=confirm(1)>
    ```
 
 4. Submit the form and confirm that the account is created.
@@ -24,7 +24,7 @@ Stored Cross-Site Scripting (XSS) was identified in the Community Hub applicatio
 7. Enter the following payload in the comment field:
 
    ```html
-   Priyansh'"><><img src=x onerror=confirm('Policies')>
+   Yash'"><><img src=x onerror=confirm('Policies')>
    ```
 
 8. Submit the comment.
@@ -34,31 +34,31 @@ Stored Cross-Site Scripting (XSS) was identified in the Community Hub applicatio
 
 **Screenshot 1 – Injected input in registration fields**
 
-<!-- Add Screenshot 1 here: Show the HTML injection payloads entered into multiple user-controlled registration/profile fields. -->
+<img width="959" height="508" alt="image" src="https://github.com/user-attachments/assets/53a3f026-a149-48f7-8f5b-c1e4fe3d449b" />
 
 **Screenshot 2 – Account creation completed**
 
-<!-- Add Screenshot 2 here: Show the successful registration response after submitting the profile data. -->
+<img width="959" height="504" alt="image" src="https://github.com/user-attachments/assets/d28c040a-9925-4108-936f-bda380126038" />
 
 **Screenshot 3 – Script execution on the profile page**
 
-<!-- Add Screenshot 3 here: Show the JavaScript confirmation dialog triggered by the stored profile input. -->
+<img width="959" height="505" alt="image" src="https://github.com/user-attachments/assets/bd353c8c-67df-4bb0-b363-88934a8b88a1" />
 
 **Screenshot 4 – Unencoded HTML in the profile source**
 
-<!-- Add Screenshot 4 here: Show the profile page source or rendered markup containing the injected HTML without proper output encoding. -->
+<img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/e5acce17-5c47-4530-9fed-994702b50732" />
 
 **Screenshot 5 – XSS payload submitted as a discussion comment**
 
-<!-- Add Screenshot 5 here: Show the payload entered into the discussion comment form before submission. -->
+<img width="959" height="502" alt="image" src="https://github.com/user-attachments/assets/452b3e86-f6b9-459b-97bd-11464cf1ed37" />
 
 **Screenshot 6 – Script execution from the saved comment**
 
-<!-- Add Screenshot 6 here: Show the JavaScript confirmation dialog displayed when the stored discussion comment is viewed. -->
+<img width="959" height="448" alt="image" src="https://github.com/user-attachments/assets/28df3627-9e66-435a-acaa-732b72a72ac5" />
 
 **Screenshot 7 – Stored payload in discussion data**
 
-<!-- Add Screenshot 7 here: Show the discussion data or page source containing the saved comment payload. -->
+<img width="958" height="502" alt="image" src="https://github.com/user-attachments/assets/9471db72-6675-4766-8c61-c61cf0158c62" />
 
 ## Impact
 
