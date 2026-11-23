@@ -13,7 +13,7 @@ A Stored Cross-Site Scripting (XSS) issue was found in the product review featur
 1. Sign in to https://members.pwnedbox.site/
 2. Visit the following product page:
 
-   https://members.pwnedbox.site/index.php?product_id=1
+   https://members.pwnedbox.site/index.php?product_id=2
 
 3. Scroll to the **Write a Customer Review** area.
 4. Choose a star rating.
