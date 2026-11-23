@@ -22,21 +22,17 @@ The Quill-based CMS allows users to publish articles containing HTML. The editor
 
 ## POC (Proof of Concept)
 
-**Screenshot 1 – Editor behavior and HTML rendering notice**
+**Screenshot 1 – HTML Editor and Article fields containing the test input**
 
-<!-- Add Screenshot 1 here: Quill editor showing the HTML/source editing option and the notice about rendering content with innerHTML. -->
+<img width="959" height="502" alt="image" src="https://github.com/user-attachments/assets/71de80e2-9776-4ea1-b660-55d70e7acea9" />
 
-**Screenshot 2 – Article fields containing the test input**
+**Screenshot 2 – JavaScript execution after publication**
 
-<!-- Add Screenshot 2 here: Article title, description, or tags fields with the Yash payload entered before publishing. -->
+<img width="959" height="505" alt="image" src="https://github.com/user-attachments/assets/268f4444-a3af-46fd-ac4b-d3e99a6ab2b6" />
 
-**Screenshot 3 – JavaScript execution after publication**
+**Screenshot 3 – Stored input visible in the article DOM**
 
-<!-- Add Screenshot 3 here: Confirmation dialog displayed after opening the published article. -->
-
-**Screenshot 4 – Stored input visible in the article DOM**
-
-<!-- Add Screenshot 4 here: Developer tools showing the published article and the stored payload in its DOM. -->
+<img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/b791a72f-ea5a-41ad-9dc7-30c1e07a039e" />
 
 ## Impact
 - It can execute attacker-controlled JavaScript in the browser of users who view the affected article.
@@ -44,6 +40,6 @@ The Quill-based CMS allows users to publish articles containing HTML. The editor
 - It may allow unauthorized actions to be performed through an affected user's account, depending on the account's privileges.
 
 ## Remediation
-- Sanitize permitted HTML with a reputable HTML sanitizer and validate content before storing or publishing it.
-- Avoid rendering untrusted article content with `innerHTML`; use safe DOM APIs and context-aware output encoding where HTML is not required.
-- Apply a restrictive Content Security Policy (CSP) as an additional layer of protection against script execution.
+- Properly encode user-supplied data before rendering it, and sanitize HTML using a trusted HTML sanitizer when HTML content is permitted.
+- Apply server-side input validation and prevent unsafe HTML elements such as <script>, <img>, and <svg> from being rendered.
+- Configure a Web Application Firewall (WAF), such as Cloudflare, with XSS protection rules as an additional defense-in-depth measure.
