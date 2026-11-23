@@ -14,11 +14,11 @@ The Support Center ticket form is affected by Stored Cross-Site Scripting (XSS).
 2. Open **Support Center**, then choose **Create Ticket**.
 3. Enter the following payload in the **Subject** field:
 
-   `Priyansh"'><><Img SrC=x OnErRoR=confirm(1)>`
+   `Yash"'><><Img SrC=x OnErRoR=confirm(5)>`
 
 4. Add this payload to the **Description** field:
 
-   `Priyansh"'><><Img SrC=x OnErRoR=confirm(2)>`
+   `Yash"'><><Img SrC=x OnErRoR=confirm(55)>`
 
 5. Choose a priority and submit the ticket.
 6. Once the ticket is submitted, observe the JavaScript confirmation dialog showing `2`.
@@ -29,15 +29,15 @@ The Support Center ticket form is affected by Stored Cross-Site Scripting (XSS).
 
 **Screenshot 1 – Payloads submitted through the ticket form**
 
-<img width="1918" height="962" alt="image" src="https://github.com/user-attachments/assets/75de54cc-32cc-41df-ab8f-006cc9b129db" />
+<img width="959" height="505" alt="image" src="https://github.com/user-attachments/assets/e042149f-55d3-4195-81af-00145ee58613" />
 
 **Screenshot 2 – Stored description triggers a JavaScript dialog**
 
-<img width="1917" height="952" alt="image" src="https://github.com/user-attachments/assets/6eef94af-736f-4261-8398-1c6f7dbdd5ed" />
+<img width="959" height="398" alt="image" src="https://github.com/user-attachments/assets/e3433f57-be38-47f8-9ccd-44e8a33f5a25" />
 
 **Screenshot 3 – Submitted values visible in the ticket page source**
 
-<img width="1918" height="967" alt="image" src="https://github.com/user-attachments/assets/faab4d5c-ed80-490f-b3e1-3f90bf594a2c" />
+<img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/39dd60f4-e836-4cc2-a75d-558668f5c4ef" />
 
 ## Impact
 
