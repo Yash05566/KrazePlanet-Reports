@@ -17,32 +17,28 @@ Consequently, the injected event handler executes JavaScript when the affected r
 3. Select **New Network Report**.
 4. Enter the following payload in the **Report Name** field:
 
-   `Yash"><><Img SrC=x OnErRoR=confirm(1)>`
+   `Yash"><><Img SrC=x OnErRoR=confirm(5)>`
 
 5. Choose an Ad Network and complete the required report details.
 6. Click **Run & Save Report**.
-7. Observe the JavaScript confirmation dialog displaying `1`.
+7. Observe the JavaScript confirmation dialog displaying `5`.
 8. Close the dialog and confirm that the report has been saved.
 9. Reload or revisit the Reports page. The stored payload executes when the report name is displayed.
 10. Open Developer Tools and inspect the page to verify that the report name is rendered as raw HTML.
 
 ## POC (Proof of Concept)
 
-**Screenshot 1 – Injected value displayed in the authenticated profile area**
+**Screenshot 1 – Payload entered in the new network report form**
 
-<!-- Add Screenshot 1 here: Show the submitted payload displayed in the authenticated user's profile area. -->
+<img width="957" height="503" alt="image" src="https://github.com/user-attachments/assets/69bfa313-984d-43ff-97c7-bd9155b64af9" />
 
-**Screenshot 2 – Payload entered in the new network report form**
+**Screenshot 2 – JavaScript confirmation triggered after saving the report**
 
-<!-- Add Screenshot 2 here: Show the Report Name field containing the test payload before saving. -->
+<img width="959" height="499" alt="image" src="https://github.com/user-attachments/assets/b21b63bb-eda1-4df2-8047-54b165fbfcc7" />
 
-**Screenshot 3 – JavaScript confirmation triggered after saving the report**
+**Screenshot 3 – Stored report displayed in the Network Reports table**
 
-<!-- Add Screenshot 3 here: Show the JavaScript confirmation dialog displaying 1. -->
-
-**Screenshot 4 – Stored report displayed in the Network Reports table**
-
-<!-- Add Screenshot 4 here: Show the saved report in the reports table and the resulting XSS execution. -->
+<img width="959" height="508" alt="image" src="https://github.com/user-attachments/assets/0053a8e4-2720-4991-b7fa-bc918eca6cc2" />
 
 ## Impact
 
