@@ -13,15 +13,15 @@ The vulnerability is present in the vulnerability report submission feature. Con
 1. Navigate to https://hackerone.pwnedbox.site/index.php?view=submit.
 2. Enter the following payload in the **Title** field:
 
-   `Yash"><><ImG SrC=x OnErRoR=confirm(1)>`
+   `Yash"><><ImG SrC=x OnErRoR=confirm(5)>`
 
 3. Enter this payload in the **Description** field:
 
-   `Yash"><><ImG SrC=x OnErRoR=confirm(2)>`
+   `Yash"><><ImG SrC=x OnErRoR=confirm(55)>`
 
 4. Enter the following payload in the **Impact** field:
 
-   `Yash"><><ImG SrC=x OnErRoR=confirm(3)>`
+   `Yash"><><ImG SrC=x OnErRoR=confirm(555)>`
 
 5. Choose the target program and severity, then submit the report.
 6. Observe the JavaScript confirmation dialog that appears after submission.
@@ -33,15 +33,15 @@ The vulnerability is present in the vulnerability report submission feature. Con
 
 **Screenshot 1 – Injected input in the report submission fields**
 
-<!-- Add Screenshot 1 here: Show the Title, Description, and Impact fields containing the submitted payloads. -->
+<img width="959" height="504" alt="image" src="https://github.com/user-attachments/assets/35287dc3-ce39-4105-a2c8-78f00547bc0b" />
 
 **Screenshot 2 – JavaScript confirmation displayed when viewing the report**
 
-<!-- Add Screenshot 2 here: Show the JavaScript confirmation dialog triggered by the stored payload. -->
+<img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/5a313c50-abbc-41eb-a0a6-5afda17b32c6" />
 
 **Screenshot 3 – Injected content reflected in the report page source**
 
-<!-- Add Screenshot 3 here: Show the report source where the submitted values appear in the title, description, and impact sections. -->
+<img width="959" height="503" alt="image" src="https://github.com/user-attachments/assets/eccf4494-f960-46e4-ad1a-52d19390b637" />
 
 ## Impact
 
