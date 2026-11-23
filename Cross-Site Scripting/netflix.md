@@ -6,29 +6,13 @@ Stored XSS in Username and Movie Reaction Features
 
 **Affected URL:** https://netflix.pwnedbox.site/
 
-The Netflix clone contains Stored Cross-Site Scripting (XSS) issues in two areas that accept user-controlled content. The username submitted during registration is saved and later displayed in the navigation bar without proper HTML encoding. Similarly, movie reaction comments are stored and rendered unsafely in the viewer reactions section.
+The movie reaction feature is vulnerable to Stored Cross-Site Scripting (XSS). User-submitted comments are stored and later displayed in the Viewer Reactions section without proper HTML output encoding.
 
-When these stored values are displayed, the browser processes the injected HTML event handlers and executes JavaScript. This can affect users who view the navigation bar or movie details containing the submitted content.
+As a result, injected HTML containing JavaScript event handlers is interpreted by the browser when the movie details page is loaded. This allows malicious JavaScript to execute in the browser of users who view the affected movie's reactions.
 
 ## Steps to Reproduce
 
-### A. Stored XSS in Username
-
-1. Visit `https://netflix.pwnedbox.site/index.php`.
-2. Open the **Sign Up** form.
-3. Enter the following payload in the **Username** field:
-
-   `Yash"><><Img SrC=x OnErRoR=confirm(12)>`
-
-4. Complete the remaining registration fields and submit the form.
-5. Observe the JavaScript alert displaying `12`.
-6. Close the alert.
-7. Inspect the page source and find the username displayed in the navigation bar.
-8. Confirm that the submitted username is included in the HTML without proper output encoding.
-
-### B. Stored XSS in Movie Reaction Comment
-
-1. Sign in and open a movie details page, for example: `https://netflix.pwnedbox.site/101`.
+1. Sign in and open a movie details page, for example: `https://netflix.pwnedbox.site/105`.
 2. Scroll to the **Share Your Thoughts & Reactions** section.
 3. Enter the following payload in the comment field:
 
@@ -42,39 +26,26 @@ When these stored values are displayed, the browser processes the injected HTML 
 
 ## POC (Proof of Concept)
 
-**Screenshot 1 – Registration form with the supplied username input**
+**Screenshot 1 – XSS Payload Entered in Movie Reaction Form**
 
-<!-- Add Screenshot 1 here: Show the registration form with the injected payload in the Full Name and Username fields. -->
+<img width="959" height="502" alt="image" src="https://github.com/user-attachments/assets/3ce81988-e026-4106-b490-c23b0114b5b9" />
 
-**Screenshot 2 – Alert triggered by the stored username after registration**
+**Screenshot 2 – JavaScript Execution Triggered After Reaction Submission**
 
-<!-- Add Screenshot 2 here: Show the JavaScript alert displaying 12 after registration. -->
+<img width="959" height="508" alt="image" src="https://github.com/user-attachments/assets/2043c57b-53b1-41ee-8c01-4b209002e472" />
 
-**Screenshot 3 – Username reflected in the navigation bar HTML**
+**Screenshot 3 – Stored Comment Reflected in Viewer Reactions Section**
 
-<!-- Add Screenshot 3 here: Show the page source where the username appears in the navigation bar without proper encoding. -->
-
-**Screenshot 4 – Movie reaction form containing the test comment**
-
-<!-- Add Screenshot 4 here: Show the comment field with the injected payload before submission. -->
-
-**Screenshot 5 – Alert displayed after submitting the movie reaction**
-
-<!-- Add Screenshot 5 here: Show the JavaScript alert displaying Comment. -->
-
-**Screenshot 6 – Stored reaction visible in the page source**
-
-<!-- Add Screenshot 6 here: Show the viewer reactions section in the page source with the submitted comment rendered without proper encoding. -->
+<img width="959" height="499" alt="image" src="https://github.com/user-attachments/assets/e1a0ac14-5c58-4233-b3b0-b04cb0858329" />
 
 ## Impact
 
-- An attacker may execute JavaScript in the browser of users who view the affected username or movie reaction.
-- Depending on the application's permissions and accessible data, this could expose sensitive information or put user accounts at risk.
-- The injected script may perform actions available to the affected user within the application. Session theft or account takeover was not demonstrated in the provided proof of concept.
+- An attacker can execute malicious JavaScript in the browser of users who view the affected movie's reaction section.
+- The vulnerability may expose sensitive information accessible within the application's context and put user accounts at risk.
+- Malicious scripts could potentially perform unauthorized actions using the privileges of affected users.
 
 ## Remediation
 
-- Apply context-aware output encoding when displaying usernames and movie reaction comments.
-- If the application intentionally supports HTML in comments, sanitize it with a maintained allowlist-based HTML sanitizer.
-- Avoid inserting untrusted input directly into HTML, attribute, or JavaScript contexts.
-- Consider a restrictive Content Security Policy (CSP) as an additional layer of protection.
+- Implement proper HTML output encoding when displaying user-submitted movie reaction comments.
+- If HTML content is supported, use a trusted allowlist-based HTML sanitizer to remove unsafe tags and event-handler attributes.
+- Apply a restrictive Content Security Policy (CSP) to provide an additional layer of protection against script execution.
